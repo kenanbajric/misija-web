@@ -1,0 +1,620 @@
+{
+	"info": {
+		"_postman_id": "61bb0ad4-a740-4389-89d8-46ee5ae6d1c0",
+		"name": "misija-web",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"kenan@test.com\",\r\n    \"password\": \"qwert\",\r\n    \"username\": \"kenan993\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"kenan@test.com\",\r\n    \"password\": \"qwert\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Pw",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtlbmFuQHRlc3QuY29tIiwidXNlcklkIjoiNjE4ZjllMWFjYWQ3ODY3MDU5OGM2NTk2IiwiaWF0IjoxNjM2ODAzMDgyLCJleHAiOjE2MzY4MjQ2ODJ9.6HTG6VeUKSEj4FdKb1Shr26KMe6KulI0487cgOPHTBA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"oldPw\": \"qwert\",\r\n    \"newPw\": \"qwertz\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/updatepassword",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"updatepassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Offer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtlbmFuQHRlc3QuY29tIiwidXNlcklkIjoiNjE4ZmFlOGUzOWRkNjRlNzJhMjE0YzgzIiwiaWF0IjoxNjM2ODA4MzQyLCJleHAiOjE2MzY4Mjk5NDJ9.0_iF_0lfhxIcf-WyzkO7RbAWlheoaA_RHIWS5mD5INQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Kenan Bajrić/OneDrive/Pictures/OLX/178173016_276192524178144_7419901488187069111_n.jpg"
+						},
+						{
+							"key": "title",
+							"value": "HP Notebook HP Predator",
+							"type": "text"
+						},
+						{
+							"key": "introduction",
+							"value": "Intro lorem ipsum hp notebook it items test .... end.",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Test description lorem ipus notebook HP ...... loren text desc.",
+							"type": "text"
+						},
+						{
+							"key": "sectionId",
+							"value": "618fb0a5026fc08ea83a1b18",
+							"type": "text"
+						},
+						{
+							"key": "slug",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/admin/offer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"admin",
+						"offer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Section",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtlbmFuQHRlc3QuY29tIiwidXNlcklkIjoiNjE4ZmFlOGUzOWRkNjRlNzJhMjE0YzgzIiwiaWF0IjoxNjM2ODA4MzQyLCJleHAiOjE2MzY4Mjk5NDJ9.0_iF_0lfhxIcf-WyzkO7RbAWlheoaA_RHIWS5mD5INQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Notebook\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/admin/section",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"admin",
+						"section"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Offer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtlbmFuQHRlc3QuY29tIiwidXNlcklkIjoiNjE4ZmFlOGUzOWRkNjRlNzJhMjE0YzgzIiwiaWF0IjoxNjM2ODA4MzQyLCJleHAiOjE2MzY4Mjk5NDJ9.0_iF_0lfhxIcf-WyzkO7RbAWlheoaA_RHIWS5mD5INQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Kenan Bajrić/OneDrive/Pictures/OLX/178469668_2924692997851952_1950394800394168500_n.jpg"
+						},
+						{
+							"key": "title",
+							"value": "HP Notebook Envy x360",
+							"type": "text"
+						},
+						{
+							"key": "introduction",
+							"value": "Intro lorem ipsum hp notebook it items test .... end.",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Test description lorem ipus notebook HP ...... loren text desc.",
+							"type": "text"
+						},
+						{
+							"key": "sectionId",
+							"value": "618fb0a5026fc08ea83a1b18",
+							"type": "text"
+						},
+						{
+							"key": "slug",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/admin/offer/618fc75834e109305d4ada7c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"admin",
+						"offer",
+						"618fc75834e109305d4ada7c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Offer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtlbmFuQHRlc3QuY29tIiwidXNlcklkIjoiNjE4ZmFlOGUzOWRkNjRlNzJhMjE0YzgzIiwiaWF0IjoxNjM2ODA4MzQyLCJleHAiOjE2MzY4Mjk5NDJ9.0_iF_0lfhxIcf-WyzkO7RbAWlheoaA_RHIWS5mD5INQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/admin/offer/618fb0a5026fc08ea83a1b18",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"admin",
+						"offer",
+						"618fb0a5026fc08ea83a1b18"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Section",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtlbmFuQHRlc3QuY29tIiwidXNlcklkIjoiNjE4ZmFlOGUzOWRkNjRlNzJhMjE0YzgzIiwiaWF0IjoxNjM2ODA4MzQyLCJleHAiOjE2MzY4Mjk5NDJ9.0_iF_0lfhxIcf-WyzkO7RbAWlheoaA_RHIWS5mD5INQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Consumer laptopi\",\r\n    \"published\": true,\r\n    \"isOnFront\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/admin/section/618fb0a5026fc08ea83a1b18",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"admin",
+						"section",
+						"618fb0a5026fc08ea83a1b18"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Section",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtlbmFuQHRlc3QuY29tIiwidXNlcklkIjoiNjE4ZmFlOGUzOWRkNjRlNzJhMjE0YzgzIiwiaWF0IjoxNjM2ODA4MzQyLCJleHAiOjE2MzY4Mjk5NDJ9.0_iF_0lfhxIcf-WyzkO7RbAWlheoaA_RHIWS5mD5INQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/admin/section/618fb0a5026fc08ea83a1b18",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"admin",
+						"section",
+						"618fb0a5026fc08ea83a1b18"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch All Sections",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtlbmFuQHRlc3QuY29tIiwidXNlcklkIjoiNjE4ZmFlOGUzOWRkNjRlNzJhMjE0YzgzIiwiaWF0IjoxNjM2ODA4MzQyLCJleHAiOjE2MzY4Mjk5NDJ9.0_iF_0lfhxIcf-WyzkO7RbAWlheoaA_RHIWS5mD5INQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"count\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/public/sections",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"public",
+						"sections"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch Single Section",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtlbmFuQHRlc3QuY29tIiwidXNlcklkIjoiNjE4ZmFlOGUzOWRkNjRlNzJhMjE0YzgzIiwiaWF0IjoxNjM2ODA4MzQyLCJleHAiOjE2MzY4Mjk5NDJ9.0_iF_0lfhxIcf-WyzkO7RbAWlheoaA_RHIWS5mD5INQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/public/sections",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"public",
+						"sections"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch All Offers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtlbmFuQHRlc3QuY29tIiwidXNlcklkIjoiNjE4ZmFlOGUzOWRkNjRlNzJhMjE0YzgzIiwiaWF0IjoxNjM2ODA4MzQyLCJleHAiOjE2MzY4Mjk5NDJ9.0_iF_0lfhxIcf-WyzkO7RbAWlheoaA_RHIWS5mD5INQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/public/offers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"public",
+						"offers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch Single Offer",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtlbmFuQHRlc3QuY29tIiwidXNlcklkIjoiNjE4ZmFlOGUzOWRkNjRlNzJhMjE0YzgzIiwiaWF0IjoxNjM2ODA4MzQyLCJleHAiOjE2MzY4Mjk5NDJ9.0_iF_0lfhxIcf-WyzkO7RbAWlheoaA_RHIWS5mD5INQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/public/offer/618fd7a74e51d5716c47aadf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"public",
+						"offer",
+						"618fd7a74e51d5716c47aadf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search All Offers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtlbmFuQHRlc3QuY29tIiwidXNlcklkIjoiNjE4ZmFlOGUzOWRkNjRlNzJhMjE0YzgzIiwiaWF0IjoxNjM2ODA4MzQyLCJleHAiOjE2MzY4Mjk5NDJ9.0_iF_0lfhxIcf-WyzkO7RbAWlheoaA_RHIWS5mD5INQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/public/offers/search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"public",
+						"offers",
+						"search"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
